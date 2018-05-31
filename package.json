@@ -8,7 +8,8 @@
     "watch": "nodemon index.js",
     "test": "jest --verbose --coverage",
     "test-watch": "jest --watchAll --verbose --coverage",
-    "lint": "eslint **/*.js"
+    "lint": "eslint **/*.js",
+    "db": "mongod dbpath=/Users/jen/codefellows/401/db"
   },
   "repository": {
     "type": "git",
