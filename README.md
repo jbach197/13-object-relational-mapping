@@ -1,27 +1,12 @@
 ## Links
 * Master - https://github.com/jbach197/13-object-relational-mapping.git
-* Pull Request - 
+* Pull Request - https://github.com/jbach197/13-object-relational-mapping/pull/1
 * Heroku - https://bach-lab13.herokuapp.com/
-* Travis - 
+* Travis - https://travis-ci.com/jbach197/13-object-relational-mapping
 
 
 ## Configuration 
-Configure the root of your repository with the following files and directories. Thoughfully name and organize any aditional configuration or module files.
-* **README.md** - contains documentation
-* **.env** - contains env variables (should be git ignored)
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file 
-* **.eslintrc** - contains the course linter configuratoin
-* **.eslintignore** - contains the course linter ignore configuration
-* **.travis.yml** - contains the course linter ignore configuration
-* **package.json** - contains npm package config
-  * create a `lint` script for running eslint (eslint **/*.js)
-  * create a `test` script for running tests
-  * create a `start` script for running your server
-* **index.js** - the entry point for your application
-* **src/** - contains your core application files and folders
-* **src/app.js** - (or main.js) contains your core application bootstrap
-* **src/lib/** - contains module definitions
-* **\_\_test\_\_/** - contains unit tests
+What to do to run the app.
 
 ## Testing and Verification
 ### `/api/resource-name`
