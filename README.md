@@ -5,7 +5,7 @@
 ## Links
 * Master - https://github.com/jbach197/13-object-relational-mapping.git
 * Pull Request - https://github.com/jbach197/13-object-relational-mapping/pull/1
-* Heroku - https://bach-lab13.herokuapp.com/
+* Heroku - https://bach-lab13.herokuapp.com/api/v1/address
 * Travis - https://travis-ci.com/jbach197/13-object-relational-mapping
 
 ## Requirements Summary
@@ -15,7 +15,19 @@
 * Use body-parser to parse the boody on POST and PUT requests
 
 ## User Instructions
-* Install the npm modules in the package JSON
+* Go view items in the model (GET request)
+  * Via heroku - clicnk the above link
+  * Via postman - enter https://bach-lab13.herokuapp.com/api/v1/address into the box, select 'GET' from the drop down and click 'SEND'
+* To add a new item to the model (POST request)
+  * In Postman enter https://bach-lab13.herokuapp.com/api/v1/address into the box, select 'POST' from the drop down.  Click 'body', 'raw' and enter information (JSON format) for the following fields: 
+      {
+        "name":
+        "address1":
+        "address2":
+        "city":
+        "state":
+        "zip":
+      }
 
 ### `/api/resource-name`
 * `POST` request
