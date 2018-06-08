@@ -1,14 +1,22 @@
+# Project Name
+**Author**:
+**Version**: 1.0.0
+
 ## Links
 * Master - https://github.com/jbach197/13-object-relational-mapping.git
 * Pull Request - https://github.com/jbach197/13-object-relational-mapping/pull/1
 * Heroku - https://bach-lab13.herokuapp.com/
 * Travis - https://travis-ci.com/jbach197/13-object-relational-mapping
 
+## Requirements Summary
+* Create HTTP server with Express
+* Create a resouce model that uses mongoose.Schema and mongoose.Model
+* Create and RESTFUL CRUD routes for the above model
+* Use body-parser to parse the boody on POST and PUT requests
 
-## Configuration 
-What to do to run the app.
+## User Instructions
+* Install the npm modules in the package JSON
 
-## Testing and Verification
 ### `/api/resource-name`
 * `POST` request
   * should pass data as stringifed JSON in the body of a post request to create a new resource
@@ -34,4 +42,4 @@ What to do to run the app.
  * `POST` - test 400, responds with 'bad request' if no request body was provided
  * `POST` - test 200, returns a resource for requests made with a valid body
 
-
+## Credits and Collaborations
