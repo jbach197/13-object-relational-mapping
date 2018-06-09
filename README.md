@@ -1,79 +1,46 @@
-![CF](https://camo.githubusercontent.com/70edab54bba80edb7493cad3135e9606781cbb6b/687474703a2f2f692e696d6775722e636f6d2f377635415363382e706e67) 13: Single Resource Mongo and Express API
-===
+# Lab 13 - Single Resource Mongo
+**Author**: Jennifer Bach
+**Version**: 1.0.0
 
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Create a PR to your master from your working branch.
-* Ensure that your repository/branch is connected to travis-ci.com
-* Ensure that your repository/branch is connected to a dyno at heroku.com
-* Heroku and Travis should pick you up and deploy
-* Submit on canvas:
-  * a question and observation
-  * how long you spent
-  * link to your pull request
-  * link to your build at travis-ci URL
-  * Heroku Server URL
+## Links
+* Master - https://github.com/jbach197/13-object-relational-mapping.git
+* Pull Request - https://github.com/jbach197/13-object-relational-mapping/pull/1
+* Heroku - https://bach-lab13.herokuapp.com/api/v1/address
+* Travis - https://travis-ci.com/jbach197/13-object-relational-mapping
 
-## Configuration 
-Configure the root of your repository with the following files and directories. Thoughfully name and organize any aditional configuration or module files.
-* **README.md** - contains documentation
-* **.env** - contains env variables (should be git ignored)
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file 
-* **.eslintrc** - contains the course linter configuratoin
-* **.eslintignore** - contains the course linter ignore configuration
-* **.travis.yml** - contains the course linter ignore configuration
-* **package.json** - contains npm package config
-  * create a `lint` script for running eslint (eslint **/*.js)
-  * create a `test` script for running tests
-  * create a `start` script for running your server
-* **index.js** - the entry point for your application
-* **src/** - contains your core application files and folders
-* **src/app.js** - (or main.js) contains your core application bootstrap
-* **src/lib/** - contains module definitions
-* **\_\_test\_\_/** - contains unit tests
+## Requirements Summary
+* Create HTTP server with Express
+* Create a resouce model that uses mongoose.Schema and mongoose.Model
+* Create and RESTFUL CRUD routes for the above model
+* Use body-parser to parse the boody on POST and PUT requests
 
-## Learning Objectives  
-* students will be able to work with the MongoDB database management system
-* students will understand the primary concepts of working with a NoSQL database management system
-* students will be able to create custom data models *(schemas)* through the use of mongoose.js
-* students will be able to use mongoose.js helper methods for interacting with their database persistence layer
+## User Instructions
+* Go view items in the model (GET request)
+  * In postman (or Heroku)  enter the above Heroku URL into the box, select 'GET' from the drop down and click 'SEND'.  This will show all items in the datbase.
+  * To select a specific item, follow the above steps but add '/an id' to the URL
+* To add a new item to the model (POST request, 
+  * In Postman enter the above Heroku URL into the box, select 'POST' from the drop down.  Click 'body', 'raw' and JSON formt.  Enter data for the following fields:
+      {
+        "name":
+        "address1":
+        "address2":
+        "city":
+        "state":
+        "zip":
+      }
+  * Confirm data appears by doing another GET request.
+* To update an item (PUT request)
+  * In Postman enter the above Heroku URL into the box, followed by '/an id'.  Select 'Put' from the drop down
+  * Click 'body', 'raw', and JSON format.  Update one of the above fields and hit send.
+  * Confirm the record was updated by doing a GET request on the ID.
+* To delete an item in the model (DELETE request)
+  * In Postman enter the above Heroku URL into the box, followed by '/an id'.  Select 'Delete' from the drop down and clicn 'SEND'
+  * You can confirm deletion by complting another GET request making sure the person doe not appear.
 
-## Requirements
+## Expected Error Messages and Status Codes
+* 200 status code upon successful completion
+* 404 not found error for routes that have not been registered
+* 400 bad request for errors within the body of the request status code for routes 
 
-#### Feature Tasks
-* create an HTTP Server using `express`
-* create a resource **model** of your choice that uses `mongoose.Schema` and `mongoose.model`
-* use the `body-parser` express middleware to parse the `req` body on `POST` and `PUT` requests
-* use the npm `debug` module to log the functions and methods that are being used in your application
-* use the express `Router` to create a route for doing **RESTFUL CRUD** operations against your _model_
-
-## Server Endpoints
-### `/api/resource-name`
-* `POST` request
-  * should pass data as stringifed JSON in the body of a post request to create a new resource
-
-### `/api/resource-name/:id`
-* `GET` request
-  * should pass the id of a resource through the url endpoint to get a resource
-    * **this should use `req.params`, not querystring parameters**
-* `PUT` request
-  * should pass data as stringifed JSON in the body of a put request to update a pre-existing resource
-* `DELETE` request
-  * should pass the id of a resource though the url endpoint to delete a resource
-    * **this should use `req.params`**
-
-### Tests
-* create a test that will ensure that your API returns a status code of 404 for routes that have not been registered
-* create a series of tests to ensure that your `/api/resource-name` endpoint responds as described for each condition below:
-  * `GET` - test 200, returns a resource with a valid body
- * `GET` - test 404, respond with 'not found' for valid requests made with an id that was not found
- * `PUT` - test 200, returns a resource with an updated body
- * `PUT` - test 400, responds with 'bad request' if no request body was provided
- * `PUT` - test 404, responds with 'not found' for valid requests made with an id that was not found
- * `POST` - test 400, responds with 'bad request' if no request body was provided
- * `POST` - test 200, returns a resource for requests made with a valid body
-
-### Bonus
-* **2pts:** a `GET` request to `/api/resource-name` should return an array of stored resources
-
+## Credits and Collaborations
+General help from the TAs, instructor and Google.  Did not work with anyone specific.
