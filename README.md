@@ -16,10 +16,10 @@
 
 ## User Instructions
 * Go view items in the model (GET request)
-  * Via heroku - clicnk the above link
-  * Via postman - enter https://bach-lab13.herokuapp.com/api/v1/address into the box, select 'GET' from the drop down and click 'SEND'
-* To add a new item to the model (POST request)
-  * In Postman enter https://bach-lab13.herokuapp.com/api/v1/address into the box, select 'POST' from the drop down.  Click 'body', 'raw' and enter information (JSON format) for the following fields: 
+  * In postman (or Heroku)  enter the above Heroku URL into the box, select 'GET' from the drop down and click 'SEND'.  This will show all items in the datbase.
+  * To select a specific item, follow the above steps but add '/an id' to the URL
+* To add a new item to the model (POST request, 
+  * In Postman enter the above Heroku URL into the box, select 'POST' from the drop down.  Click 'body', 'raw' and JSON formt.  Enter data for the following fields:
       {
         "name":
         "address1":
@@ -28,30 +28,15 @@
         "state":
         "zip":
       }
+  * Confirm data appears by doing another GET request.
+* To delete an item in the model (DELETE request)
+  * In Postman enter the above Heroku URL into the box, followed by '/an id'.  Select 'Delete' from the drop down and clicn 'SEND'
+  * You can confirm deletion by complting another GET request making sure the person doe not appear.
 
-### `/api/resource-name`
-* `POST` request
-  * should pass data as stringifed JSON in the body of a post request to create a new resource
-
-### `/api/resource-name/:id`
-* `GET` request
-  * should pass the id of a resource through the url endpoint to get a resource
-    * **this should use `req.params`, not querystring parameters**
-* `PUT` request
-  * should pass data as stringifed JSON in the body of a put request to update a pre-existing resource
-* `DELETE` request
-  * should pass the id of a resource though the url endpoint to delete a resource
-    * **this should use `req.params`**
-
-### Tests
-* create a test that will ensure that your API returns a status code of 404 for routes that have not been registered
-* create a series of tests to ensure that your `/api/resource-name` endpoint responds as described for each condition below:
-  * `GET` - test 200, returns a resource with a valid body
- * `GET` - test 404, respond with 'not found' for valid requests made with an id that was not found
- * `PUT` - test 200, returns a resource with an updated body
- * `PUT` - test 400, responds with 'bad request' if no request body was provided
- * `PUT` - test 404, responds with 'not found' for valid requests made with an id that was not found
- * `POST` - test 400, responds with 'bad request' if no request body was provided
- * `POST` - test 200, returns a resource for requests made with a valid body
+## Expected Error Messages and Status Codes
+* 200 status code upon successful completion
+* 404 not found error for routes that have not been registered
+* 400 bad request for errors within the body of the request status code for routes 
 
 ## Credits and Collaborations
+General help from the TAs, instructor and Google.  Did not work with anyone specific.
