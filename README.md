@@ -1,5 +1,5 @@
-# Project Name
-**Author**:
+# Lab 13 - Single Resource Mongo
+**Author**: Jennifer Bach
 **Version**: 1.0.0
 
 ## Links
@@ -29,6 +29,10 @@
         "zip":
       }
   * Confirm data appears by doing another GET request.
+* To update an item (PUT request)
+  * In Postman enter the above Heroku URL into the box, followed by '/an id'.  Select 'Put' from the drop down
+  * Click 'body', 'raw', and JSON format.  Update one of the above fields and hit send.
+  * Confirm the record was updated by doing a GET request on the ID.
 * To delete an item in the model (DELETE request)
   * In Postman enter the above Heroku URL into the box, followed by '/an id'.  Select 'Delete' from the drop down and clicn 'SEND'
   * You can confirm deletion by complting another GET request making sure the person doe not appear.
